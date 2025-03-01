@@ -3,7 +3,7 @@ package Assignment3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DungeonCombined {
+public class DungeonCombined implements CloneableRoom{
 
     private String name;
     private String description;
@@ -19,6 +19,21 @@ public class DungeonCombined {
     public DungeonCombined addRoom(RoomCombined room) { // Add room which we clone
         rooms.add(room);
         return this;
+    }
+
+    @Override
+    public DungeonCombined cloneObject() {
+        return new DungeonCombined(name, description, rooms);
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String toString() {

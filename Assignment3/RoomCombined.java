@@ -12,10 +12,16 @@ public class RoomCombined implements CloneableRoom {
     }
 
     @Override
-    public CloneableRoom cloneRoom() { // Realized to cloned object
+    public RoomCombined cloneObject() { // Realized to cloned object
         return new RoomCombined(name, description);
     }
 
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
     public void setName(String name) { // Set name to clones
         this.name = name;
     }
